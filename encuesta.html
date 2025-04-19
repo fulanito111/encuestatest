@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta sobre Sexualidad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e0f7fa);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      width: 100%;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ff4081;
+    }
+    section {
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .pregunta {
+      margin: 1rem 0;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .tabla-opciones {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .tabla-opciones th, .tabla-opciones td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ff4081;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e73370;
+    }
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ENCUESTA PARA ADOLESCENTES</h1>
+
+    <form id="encuesta" action="https://formsubmit.co/aea7102@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="agradecimiento.html">
+
+      <!-- SECCIÓN I -->
+      <section>
+        <h2>I. VIDA SEXUAL Y REPRODUCTIVA</h2>
+        <div class="pregunta">
+          <label>¿Has iniciado tus relaciones sexuales?</label>
+          <label><input type="radio" name="inicio_relaciones" value="si"> Sí</label>
+          <label><input type="radio" name="inicio_relaciones" value="no"> No</label>
+        </div>
+        <div class="pregunta">
+          <label>Edad de inicio de vida sexual:</label>
+          <label><input type="radio" name="edad_inicio" value="11-13"> 11 a 13 años</label>
+          <label><input type="radio" name="edad_inicio" value="14-16"> 14 a 16 años</label>
+          <label><input type="radio" name="edad_inicio" value="17-19"> 17 a 19 años</label>
+        </div>
+      </section>
+
+      <!-- SECCIÓN II -->
+      <section>
+        <h2>II. CONOCIMIENTO DE SALUD SEXUAL Y REPRODUCTIVA</h2>
+        <div class="pregunta">
+          <label>¿Usted conoce qué es salud sexual y reproductiva?</label>
+          <label><input type="radio" name="conoce_salud" value="si"> Sí</label>
+          <label><input type="radio" name="conoce_salud" value="no"> No</label>
+        </div>
+        <div class="pregunta">
+          <label>¿Cuál es el mejor método para evitar los embarazos?</label>
+          <label><input type="checkbox" name="metodo_mejor" value="pildoras"> Píldoras</label>
+          <label><input type="checkbox" name="metodo_mejor" value="inyecciones"> Inyecciones</label>
+          <label><input type="checkbox" name="metodo_mejor" value="natural"> Método natural</label>
+          <label><input type="checkbox" name="metodo_mejor" value="preservativos"> Preservativos</label>
+          <label><input type="checkbox" name="metodo_mejor" value="abstencion"> Abstención</label>
+          <label><input type="checkbox" name="metodo_mejor" value="dispositivos"> Dispositivos</label>
+        </div>
+      </section>
+
+      <!-- SECCIÓN III -->
+      <section>
+        <h2>III. ACCESO A SERVICIOS VINCULADOS A LA SALUD REPRODUCTIVA</h2>
+        <div class="pregunta">
+          <label>¿Alguna vez has ido a un consultorio de planificación familiar?</label>
+          <label><input type="radio" name="consultorio" value="si"> Sí</label>
+          <label><input type="radio" name="consultorio" value="no"> No</label>
+        </div>
+        <div class="pregunta">
+          <label>¿Has recibido consejería?</label>
+          <label><input type="radio" name="consejeria" value="si"> Sí</label>
+          <label><input type="radio" name="consejeria" value="no"> No</label>
+          <label>¿En qué?:</label>
+          <label><input type="checkbox" name="tema_consejeria" value="planificacion"> Planificación familiar</label>
+          <label><input type="checkbox" name="tema_consejeria" value="sexualidad"> Sexualidad humana</label>
+          <label><input type="checkbox" name="tema_consejeria" value="its"> ITS-VIH/SIDA</label>
+        </div>
+        <div class="pregunta">
+          <label>¿Crees que se puede llegar virgen al matrimonio?</label>
+          <label><input type="radio" name="virgen_matrimonio" value="si"> Sí</label>
+          <label><input type="radio" name="virgen_matrimonio" value="no"> No</label>
+        </div>
+        <div class="pregunta">
+          <label>¿Cuáles son las principales causas del embarazo en la adolescencia?</label>
+          <textarea name="causas_embarazo"></textarea>
+        </div>
+      </section>
+
+      <!-- SECCIÓN IV -->
+      <section>
+        <h2>IV. OPINIÓN SOBRE EL EMBARAZO ADOLESCENTE</h2>
+        <table class="tabla-opciones">
+          <tr>
+            <th>Enunciado</th>
+            <th>Muy de acuerdo</th>
+            <th>De acuerdo</th>
+            <th>Ni acuerdo ni desacuerdo</th>
+            <th>En desacuerdo</th>
+            <th>Muy en desacuerdo</th>
+          </tr>
+          <tr>
+            <td>Existe riesgo para la vida de la adolescente en un embarazo a esta edad</td>
+            <td><input type="radio" name="op1" value="5"></td>
+            <td><input type="radio" name="op1" value="4"></td>
+            <td><input type="radio" name="op1" value="3"></td>
+            <td><input type="radio" name="op1" value="2"></td>
+            <td><input type="radio" name="op1" value="1"></td>
+          </tr>
+          <tr>
+            <td>Existe riesgo para la salud de la adolescente y del bebé</td>
+            <td><input type="radio" name="op2" value="5"></td>
+            <td><input type="radio" name="op2" value="4"></td>
+            <td><input type="radio" name="op2" value="3"></td>
+            <td><input type="radio" name="op2" value="2"></td>
+            <td><input type="radio" name="op2" value="1"></td>
+          </tr>
+          <tr>
+            <td>Está bien dejar la escuela por un embarazo</td>
+            <td><input type="radio" name="op3" value="5"></td>
+            <td><input type="radio" name="op3" value="4"></td>
+            <td><input type="radio" name="op3" value="3"></td>
+            <td><input type="radio" name="op3" value="2"></td>
+            <td><input type="radio" name="op3" value="1"></td>
+          </tr>
+          <tr>
+            <td>Cree que el embarazo adolescente trunca el proyecto de vida de la y el adolescente</td>
+            <td><input type="radio" name="op4" value="5"></td>
+            <td><input type="radio" name="op4" value="4"></td>
+            <td><input type="radio" name="op4" value="3"></td>
+            <td><input type="radio" name="op4" value="2"></td>
+            <td><input type="radio" name="op4" value="1"></td>
+          </tr>
+          <tr>
+            <td>El embarazo no deseado es consecuencia de no tener informacion en sexualidad</td>
+            <td><input type="radio" name="op5" value="5"></td>
+            <td><input type="radio" name="op5" value="4"></td>
+            <td><input type="radio" name="op5" value="3"></td>
+            <td><input type="radio" name="op5" value="2"></td>
+            <td><input type="radio" name="op5" value="1"></td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- SECCIÓN V -->
+      <section>
+        <h2>V. ACCESO A LA EDUCACIÓN SEXUAL Y LOS RECURSOS EDUCATIVOS</h2>
+        <div class="pregunta">
+          <label>¿Cómo aprendiste o aprendes sobre sexualidad?</label>
+          <textarea name="aprendizaje_sexualidad"></textarea>
+        </div>
+        <div class="pregunta">
+          <label>¿Con quién hablas sobre temas relacionados con la sexualidad?</label>
+          <textarea name="habla_con"></textarea>
+        </div>
+        <div class="pregunta">
+          <label>¿Cuál es la mejor opción para disminuir embarazos en adolescentes?</label>
+          <textarea name="disminuir_embarazos"></textarea>
+        </div>
+        <div class="pregunta">
+          <label>¿Qué edad crees que es la correcta para ser padres?</label>
+          <input type="text" name="edad_padres">
+        </div>
+        <div class="pregunta">
+          <label>¿Cuáles son los motivos que impulsan a los adolescentes a tener su primera relación sexual?</label>
+          <textarea name="motivos_relacion"></textarea>
+        </div>
+        <div class="pregunta">
+          <label>¿Qué buscas en una relación de pareja o de enamorado?</label>
+          <textarea name="relacion_pareja"></textarea>
+        </div>
+        <div class="pregunta">
+          <label>¿Cuáles crees que son las consecuencias de tener relaciones sexuales a temprana edad?</label>
+          <textarea name="consecuencias_temprana_edad"></textarea>
+        </div>
+      </section>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  <div class="footer">
+    <p>&copy; 2025</p>
+  </div>
+
+  <script>
+    // Revelar secciones al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Redirigir tras enviar
+    document.getElementById('encuesta').addEventListener('submit', function() {
+      setTimeout(() => {
+        location.href = "agradecimiento.html"; // Cambia si necesitas otra URL
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
